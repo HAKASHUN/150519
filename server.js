@@ -26,14 +26,14 @@ app.use(
 );
 
 app.get('/', function(req, res) {
+    res.render('ng', config);
+});
+
+app.get('/test', function(req, res) {
     var data = {
         title: 'Home!'
     }
     res.render('index.jade', data);
-});
-
-app.get('/ng', function(req, res) {
-    res.render('ng', config);
 });
 
 app.listen(3333, function() {
