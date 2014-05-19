@@ -122,7 +122,7 @@ function restoreScript( elem ) {
 	return elem;
 }
 
-// Mark scripts as having already been evaluated
+// Mark modules as having already been evaluated
 function setGlobalEval( elems, refElements ) {
 	var elem,
 		i = 0;
@@ -181,7 +181,7 @@ function fixCloneNodeIssues( src, dest ) {
 		dest.removeAttribute( jQuery.expando );
 	}
 
-	// IE blanks contents when cloning scripts, and tries to evaluate newly-set text
+	// IE blanks contents when cloning modules, and tries to evaluate newly-set text
 	if ( nodeName === "script" && dest.text !== src.text ) {
 		disableScript( dest ).text = src.text;
 		restoreScript( dest );
@@ -672,7 +672,7 @@ jQuery.fn.extend({
 					if ( i !== iNoClone ) {
 						node = jQuery.clone( node, true, true );
 
-						// Keep references to cloned scripts for later restoration
+						// Keep references to cloned modules for later restoration
 						if ( hasScripts ) {
 							jQuery.merge( scripts, getAll( node, "script" ) );
 						}
@@ -684,17 +684,17 @@ jQuery.fn.extend({
 				if ( hasScripts ) {
 					doc = scripts[ scripts.length - 1 ].ownerDocument;
 
-					// Reenable scripts
+					// Reenable modules
 					jQuery.map( scripts, restoreScript );
 
-					// Evaluate executable scripts on first document insertion
+					// Evaluate executable modules on first document insertion
 					for ( i = 0; i < hasScripts; i++ ) {
 						node = scripts[ i ];
 						if ( rscriptType.test( node.type || "" ) &&
 							!jQuery._data( node, "globalEval" ) && jQuery.contains( doc, node ) ) {
 
 							if ( node.src ) {
-								// Optional AJAX dependency, but won't run scripts if not present
+								// Optional AJAX dependency, but won't run modules if not present
 								if ( jQuery._evalUrl ) {
 									jQuery._evalUrl( node.src );
 								}

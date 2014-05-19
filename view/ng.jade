@@ -5,7 +5,7 @@ html
     title Paul'sYoung
     link(rel='stylesheet', href='app/styles/main.css')
 
-  body(ng-app='myGameApp')
+  body(ng-app='top')
     .header
       ul.nav.nav-pills.pull-right
         li
@@ -36,5 +36,6 @@ html
     script(src='#{bootstrap}/tooltip.js')
     script(src='#{bootstrap}/popover.js')
 
-    script(src='app/scripts/app.js')
-    script(src='app/scripts/controllers/main.js')
+    // top module scripts
+    script(src='app/modules/top/app.js')
+    script(src='app/modules/top/controller.js')

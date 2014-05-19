@@ -1,13 +1,15 @@
 'use strict';
-
-angular
-  .module('myGameApp', [
+(function(){
+  // top module
+  var Top = angular.module('top', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
-  ])
-  .config(function ($routeProvider) {
+    'ngRoute',
+    'top.controllers'
+  ]);
+  // config for top module
+  var config = function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'app/views/main.html',
@@ -24,4 +26,8 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  };
+
+  // apply
+  Top.config(config);
+})();
