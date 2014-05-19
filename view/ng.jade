@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Paul'sYoung
+    link(rel='stylesheet', href='app/styles/main.css')
+
+  body(ng-app='myGameApp')
+    .header
+      ul.nav.nav-pills.pull-right
+        li
+          a(ng-href='#') Home
+        li
+          a(ng-href='#/about') About
+        li
+          a(ng-href='#/contact') Contact
+      h3.text-muted testPage
+
+    .container(ng-view='')
+
+    script(src='#{bower}/jquery/dist/jquery.js')
+    script(src='#{bower}/angular/angular.js')
+    script(src='#{bower}/angular-resource/angular-resource.js')
+    script(src='#{bower}/angular-cookies/angular-cookies.js')
+    script(src='#{bower}/angular-sanitize/angular-sanitize.js')
+    script(src='#{bower}/angular-route/angular-route.js')
+    script(src='#{bootstrap}/alert.js')
+    script(src='#{bootstrap}/button.js')
+    script(src='#{bootstrap}/carousel.js')
+    script(src='#{bootstrap}/collapse.js')
+    script(src='#{bootstrap}/dropdown.js')
+    script(src='#{bootstrap}/tab.js')
+    script(src='#{bootstrap}/transition.js')
+    script(src='#{bootstrap}/scrollspy.js')
+    script(src='#{bootstrap}/modal.js')
+    script(src='#{bootstrap}/tooltip.js')
+    script(src='#{bootstrap}/popover.js')
+
+    <script src="app/scripts/app.js"></script>
+    <script src="app/scripts/controllers/main.js"></script>
